@@ -16,7 +16,7 @@ public class BridgeMessage {
 
 public class WebWorkspace : DesktopWebHostWindow {
     static readonly DesktopHostOptions HostOptions=new DesktopHostOptions {
-        AppId="DesktopGrowth",WindowTitle="灵序 · 计划桌面",DataFolderName="DesktopGrowth",PortableDataFolder="数据",
+        AppId="DesktopGrowth",WindowTitle="灵感池 · Idea Hole",DataFolderName="DesktopGrowth",PortableDataFolder="数据",
         WebFolderName="web",VirtualHostName="desktopgrowth.local",
         BackgroundR=248,BackgroundG=245,BackgroundB=241,PreviewWidth=1500,PreviewHeight=930
     };
