@@ -1,0 +1,23 @@
+# Local user data and browser runtime cache
+数据/
+
+# Restored NuGet dependencies
+.packages/
+
+# Local build outputs
+*.exe
+*.dll
+*.pdb
+*.user
+
+# Design iteration artifacts; keep one representative product screenshot
+design/**
+!design/ring-planner-analysis/
+!design/ring-planner-analysis/free-drag-live.png
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vs/
+.vscode/
+

@@ -1,0 +1,25 @@
+:root {
+  --soft-ink:#151615;
+  --soft-accent:#d96108;
+  --soft-background:#f8f5f1;
+  --soft-paper:#fbf7f0;
+  --soft-note-yellow:#fef3c9;
+  --soft-note-blue:#dce8fa;
+  --soft-note-peach:#fee5d1;
+  --soft-note-coral:#fce4e4;
+  --soft-note-lavender:#e8e0f8;
+  --soft-note-cream:#f9f0e5;
+  --soft-note-lime:#d9f44b;
+  --soft-note-red:#ff0000;
+  --soft-swatch-red:#ff0000;
+  --soft-swatch-lime:#c9ed19;
+  --soft-swatch-yellow:#fbeab5;
+  --soft-swatch-blue:#b8d2ee;
+  --soft-swatch-peach:#f5d1b6;
+  --soft-swatch-coral:#f7cec0;
+  --soft-swatch-lavender:#d8c8e8;
+  --soft-swatch-cream:#f9f0e5;
+  --soft-shadow-contact:0 2px 3px rgb(83 62 39 / 14%);
+  --soft-shadow-floating:0 9px 15px rgb(83 62 39 / 11%);
+  --soft-radius-paper:11px;
+}

@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><link rel="stylesheet" href="styles.css"><style>
+html,body{background:var(--note-bg,#f9f0e5)}.note{inset:0;width:100%;height:100%;border-radius:calc(var(--note-size)*.045);box-shadow:none}.unpin{position:absolute;z-index:10;right:8px;top:8px;width:32px;height:32px;padding:6px;color:#62594f;opacity:.48;border-radius:6px;background:#ffffff52;transition:opacity .12s,background .12s}.note:hover .unpin,.unpin:focus-visible{opacity:.95;background:#ffffff96}.unpin svg{width:20px;height:20px}
+</style></head><body><article class="note"><div class="drag-strip"></div><input class="note-title" placeholder="标题" maxlength="60"><textarea class="note-body" placeholder="写点什么…" maxlength="1200"></textarea><button class="unpin" aria-label="取消固定，放回计划桌面"><svg viewBox="0 0 24 24"><path d="M9 3h6m-5 0v6l-3 4v2h10v-2l-3-4V3M12 15v6M3 3l18 18"/></svg></button></article><script src="materials.js"></script><script>
+const shades={yellow:'#fef3c9',blue:'#dce8fa',peach:'#fee5d1',coral:'#fce4e4',lavender:'#e8e0f8',cream:'#f9f0e5',lime:'#d9f44b',red:'#ff0000'};let note;
+const title=document.querySelector('.note-title'),body=document.querySelector('.note-body');
+const send=m=>window.chrome.webview.postMessage(m);
+window.hostReceive=n=>{note=n;document.body.style.setProperty('--note-bg',shades[n.Color]||shades.cream);document.querySelector('.note').dataset.color=n.Color;document.querySelector('.note').style.setProperty('--note-size',innerWidth+'px');title.value=n.Title||'';body.value=n.Body||'';document.fonts.ready.then(()=>setTimeout(()=>send({type:'rendered'}),0))};
+title.oninput=body.oninput=()=>{if(note)send({type:'edit',title:title.value,body:body.value})};
+document.querySelector('.drag-strip').onpointerdown=e=>{if(e.button===0){e.preventDefault();send({type:'drag'})}};
+document.querySelector('.unpin').onclick=()=>send({type:'unpin'});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')send({type:'unpin'})});
+</script></body></html>

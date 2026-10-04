@@ -1,0 +1,49 @@
+:root{color-scheme:light;--ink:var(--soft-ink);--accent:var(--soft-accent);font-family:"Microsoft YaHei UI","Microsoft YaHei",sans-serif}
+*{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;overflow:hidden}button,input,textarea{font:inherit}button{border:0;background:none;color:inherit;cursor:pointer}button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}svg{width:24px;height:24px;display:block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+body{color:var(--ink);user-select:none;background:var(--soft-background);background-image:var(--back-grain)}
+.app{position:absolute;width:1586px;height:992px;transform-origin:0 0}
+.ideas{position:absolute;left:38px;top:60px;width:971px;height:834px;z-index:2;pointer-events:none}
+.note,.note-bar,.note-tools{pointer-events:auto}
+.note-bar{height:52px;display:flex;align-items:center;gap:24px;width:max-content}
+.new-note{width:60px;height:52px;display:grid;place-items:center;flex:none;border-radius:15px;background:#fefdfb;box-shadow:0 2px 3px #533e2720,0 5px 9px #533e271a;color:#494746}.new-note svg{width:26px;height:26px;stroke-width:1.6}.new-note:hover{background:#fff}
+.palette{display:flex;align-items:center;gap:14px}.swatch{width:34px;height:34px;flex:none;border-radius:50%;padding:0;box-shadow:0 1px 2px #533e2717}.swatch:hover{outline:1px solid #b8a696;outline-offset:3px}.swatch:focus-visible{outline:2px solid #d96108;outline-offset:3px}
+.board{position:absolute;left:0;top:111px;width:971px;height:723px;overflow:visible}
+.note{position:absolute;border-radius:var(--soft-radius-paper);padding:calc(var(--note-size)*.2387) calc(var(--note-size)*.103) calc(var(--note-size)*.08) calc(var(--note-size)*.1355);display:flex;flex-direction:column;touch-action:none;background-color:var(--note-bg);background-image:var(--paper-grain);box-shadow:var(--soft-shadow-contact),var(--soft-shadow-floating);isolation:isolate}
+.drag-strip{position:absolute;left:0;right:0;top:0;height:calc(var(--note-size)*.21);cursor:grab}.drag-strip:active{cursor:grabbing}
+.note-title,.note-body{width:100%;border:0;outline:0;background:transparent;resize:none;user-select:text;padding:0;border-radius:0;letter-spacing:0}.note-title{color:#0a0c0b;font-size:calc(var(--note-size)*.10323);line-height:1.3125;font-weight:700;height:1.3125em;flex:none;margin:0 0 calc(var(--note-size)*.1)}
+.note-body{font-size:calc(var(--note-size)*.07742);line-height:1.7083;font-weight:400;color:#282c29;flex:1;min-height:0;overflow:auto;scrollbar-width:none;-ms-overflow-style:none}.note-body::-webkit-scrollbar{display:none;width:0;height:0}.note-title::placeholder,.note-body::placeholder{color:#30282a70}
+.resize-handle{position:absolute;right:0;bottom:0;width:16px;height:16px;cursor:nwse-resize}
+.note-tools{position:absolute;z-index:2147483647;height:92px;width:40px;padding:6px 3px;border-radius:2px 9px 9px 2px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;background-color:var(--tab-color,#f9f0e5);background-image:linear-gradient(#ffffff50,#ffffff20),var(--paper-grain);box-shadow:inset 1px 0 2px #72583f12,2px 2px 4px #533e2716,3px 5px 9px #533e2712;color:#62594f}.note-tools[data-side="left"]{border-radius:9px 2px 2px 9px;box-shadow:inset -1px 0 2px #72583f12,-2px 2px 4px #533e2716,-3px 5px 9px #533e2712}.note-tools[hidden]{display:none}.note-tools .divider{height:1px;width:19px;background:#78665322}.note-tools>button{width:32px;height:34px;padding:6px;border-radius:5px}.note-tools svg{width:20px;height:20px;stroke-width:1.65}.note-tools>button:hover{background:#ffffff66;color:#322d28}.note-tools>button:active{background:#78665314;transform:translateY(1px)}.note-tools>button[data-action="delete"]:hover{color:#a05543}
+@font-face{font-family:Xiaolai;src:url('assets/fonts/Xiaolai-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+.schedule{position:absolute;left:1016px;top:56px;width:560px;height:799px;isolation:isolate}
+/* Original wide notebook material, with live handwritten task rows. */
+.notebook-skin{position:absolute;pointer-events:none;user-select:none;max-width:none;width:1530.74px;height:964.11px;left:-947.62px;top:-54.40px;z-index:-1}
+.schedule{perspective:1600px}
+.page-corner{position:absolute;right:22px;bottom:18px;width:76px;height:76px;z-index:4;padding:0;touch-action:manipulation;border-radius:0 0 13px 0}
+.corner-paper{position:absolute;right:0;bottom:0;width:25px;height:25px;fill:none;stroke:none;overflow:visible;opacity:.5;transform-origin:100% 100%;transition:width .32s ease,height .32s ease,opacity .32s ease,filter .32s ease;filter:drop-shadow(-1px -1px 1px #6d503a15)}
+.corner-shadow{fill:#9b8367;opacity:.12}
+.corner-fold{fill:url(#corner-back);stroke:#c9bcaa;stroke-width:.45}
+.page-corner:hover .corner-paper,.page-corner:focus-visible .corner-paper{width:57px;height:57px;opacity:1;filter:drop-shadow(-3px -3px 3px #6d503a25)}
+.page-corner:focus-visible{outline:1px dashed #b7a18a;outline-offset:1px}
+.page-corner:active .corner-paper{width:65px;height:65px}
+.page-turn-sheet{position:absolute;left:65px;right:23px;top:10px;bottom:18px;z-index:3;pointer-events:none;visibility:hidden;border-radius:13px;background:#faf7ef;background-image:var(--paper-grain),linear-gradient(90deg,#ede6d955,#fffdf500 30%,#fffdf5 85%,#d1c4ad66);transform-origin:left center;box-shadow:4px 3px 10px #6d503a15;backface-visibility:hidden}
+.schedule.is-turning .page-corner{pointer-events:none}
+@media(prefers-reduced-motion:reduce){.corner-paper{transition:none}}
+.timeline{position:absolute;left:79px;right:35px;top:67px;bottom:69px;overflow-y:auto;overflow-x:hidden;scrollbar-width:none;-ms-overflow-style:none;overscroll-behavior:contain}.timeline::-webkit-scrollbar{display:none;width:0;height:0}
+.task{position:relative;width:100%;min-height:107px;display:grid;grid-template-columns:126px minmax(0,1fr) 32px;column-gap:16px;align-items:center;padding:15px 16px;text-align:left;font-family:Xiaolai,sans-serif;font-synthesis:none;isolation:isolate;touch-action:pan-y}
+.task-time{color:#685e58;font-size:26px;line-height:34px;white-space:normal;overflow-wrap:anywhere}.task-time.range{font-size:20px;line-height:28px}
+.task-title{font-size:28px;line-height:36px;font-weight:400;color:#32312c;overflow-wrap:anywhere}
+.task:focus-visible{outline:1px dashed #b7a18a;outline-offset:-4px;border-radius:8px}
+.task:hover:not(.done){background:#b8a08508}
+.pencil-rule{position:absolute;left:8px;bottom:0;width:calc(100% - 16px);height:6px;stroke:#a38c7250;stroke-width:.85;pointer-events:none}.pencil-rule path{vector-effect:non-scaling-stroke}.task:last-child .pencil-rule{display:none}
+.hand-check{width:32px;height:32px;visibility:hidden;pointer-events:none;transform:rotate(var(--check-tilt));overflow:visible}.hand-check .check-ink{fill:url(#crayon-burgundy) #893e50;stroke:#893e50;stroke-width:.25;stroke-opacity:.45;opacity:.94}.task.done .hand-check{visibility:visible}
+.note-body{width:calc(100% + var(--note-size)*.045)}
+.swatch[data-color="cream"]{border:1px solid #bbaa96}
+.note[data-color="cream"],.note-editor[data-color="cream"]{outline:1px solid #bbaa9699;outline-offset:-1px}
+.task.active::before{content:"";position:absolute;inset:4px 0 4px 0;z-index:-1;background:#feeede;background-image:var(--paper-grain);opacity:.88;clip-path:polygon(3% 2%,17% 1%,22% 3%,51% 1%,68% 3%,86% 0,96% 4%,96% 9%,99% 12%,98% 18%,100% 25%,98% 32%,100% 39%,98% 46%,100% 56%,98% 65%,99% 76%,97% 82%,97% 91%,93% 95%,73% 96%,67% 99%,48% 97%,39% 100%,20% 96%,6% 97%,4% 92%,1% 90%,2% 84%,0 78%,1% 69%,0 63%,2% 53%,0 42%,1% 33%,0 24%,2% 18%,1% 10%,3% 8%)}
+.toast{position:fixed;left:50%;bottom:30px;transform:translateX(-50%);padding:10px 18px;border-radius:12px;background:#302720;color:#fff;opacity:0;transition:opacity .15s;pointer-events:none}.toast.show{opacity:1}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.note-tools{height:202px}
+.note-tools>button[data-action="archive"]:hover{color:#47704b}
+.note[data-color="red"],.note-editor[data-color="red"]{background-image:none;color:#000}
+.note[data-color="red"] input,.note[data-color="red"] textarea,.note-editor[data-color="red"] textarea,.note-editor[data-color="red"] .editor-content,.note-editor[data-color="red"] .editor-content :is(h1,h2,h3,h4){color:#000}
